@@ -52,7 +52,7 @@ public:
     Stack() : _top(nullptr), _size(0) {}
 
     template <typename Iter>
-    Stack(Iter begin, Iter end) : _top(nullptr), size(0) {
+    Stack(Iter begin, Iter end) : _top(nullptr), _size(0) {
         add(begin, end);
     }
 
@@ -64,7 +64,7 @@ public:
         if (this != &other) {
             Stack<T> tmp(other);
             std::swap(_top, tmp._top);
-            std::swap(_size, other._size);
+            std::swap(_size, tmp._size);
         }
         return *this;
     }
@@ -99,11 +99,11 @@ public:
         return _top == nullptr;
     }
 
-    int size() const() {
+    int size() const {
         return _size;
     }
 
-    const T& top() const() {
+    const T& top() const {
         if (empty()) {
             throw std::underflow_error("Stack::top() - stack vuoto");
         }
@@ -202,7 +202,7 @@ public:
 
     friend std::ostream& operator<<(std::ostream& os, const Stack<T>& s) {
         os << "[cima] ";
-        Node* curr = s.top;
+        Node* curr = s._top;
         while (curr != nullptr) {
             os << curr->data;
             if (curr->next != nullptr) {
@@ -245,7 +245,7 @@ public:
         int loaded = 0;
 
         try {
-            for (int = 0; i < count; ++i) {
+            for (int i = 0; i < count; ++i) {
                 T value;
                 if (!(ifs >> value)) {
                     throw std::runtime_error("Stack::load() - file malformato: dati insufficienti");
