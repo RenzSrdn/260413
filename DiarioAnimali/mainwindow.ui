@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>1000</width><height>650</height></rect>
+  </property>
+  <property name="windowTitle">
+   <string>Diario Animali Domestici</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+
+      <!-- PANNELLO SINISTRO: lista animali -->
+      <widget class="QWidget" name="panelAnimali">
+       <layout class="QVBoxLayout" name="vLayoutAnimali">
+        <item>
+         <widget class="QLabel" name="labelAnimali">
+          <property name="text"><string>Animali</string></property>
+          <property name="font">
+           <font><bold>true</bold></font>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListWidget" name="listAnimali"/>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="hLayoutBottoniAnimali">
+          <item>
+           <widget class="QPushButton" name="buttonAggiungiAnimale">
+            <property name="text"><string>+ Aggiungi</string></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="buttonEliminaAnimale">
+            <property name="text"><string>Elimina</string></property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+
+      <!-- PANNELLO CENTRALE: dettagli animale -->
+      <widget class="QWidget" name="panelDettagli">
+       <layout class="QVBoxLayout" name="vLayoutDettagli">
+        <item>
+         <widget class="QLabel" name="labelDettagli">
+          <property name="text"><string>Dettagli Animale</string></property>
+          <property name="font">
+           <font><bold>true</bold></font>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelNome">
+          <property name="text"><string>Nome:</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEditNome">
+          <property name="readOnly"><bool>true</bool></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelSpecie">
+          <property name="text"><string>Specie:</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEditSpecie">
+          <property name="readOnly"><bool>true</bool></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelRazza">
+          <property name="text"><string>Razza:</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEditRazza">
+          <property name="readOnly"><bool>true</bool></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelNascita">
+          <property name="text"><string>Data di nascita:</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEditNascita">
+          <property name="readOnly"><bool>true</bool></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelPeso">
+          <property name="text"><string>Peso (kg):</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEditPeso">
+          <property name="readOnly"><bool>true</bool></property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="spacerDettagli">
+          <property name="orientation"><enum>Qt::Vertical</enum></property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="hLayoutBottoniDettagli">
+          <item>
+           <widget class="QPushButton" name="buttonModificaAnimale">
+            <property name="text"><string>Modifica</string></property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+
+      <!-- PANNELLO DESTRO: eventi -->
+      <widget class="QWidget" name="panelEventi">
+       <layout class="QVBoxLayout" name="vLayoutEventi">
+        <item>
+         <widget class="QLabel" name="labelEventi">
+          <property name="text"><string>Eventi</string></property>
+          <property name="font">
+           <font><bold>true</bold></font>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListWidget" name="listEventi"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelDettaglioEvento">
+          <property name="text"><string>Dettaglio evento</string></property>
+          <property name="font">
+           <font><bold>true</bold></font>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="textDettaglioEvento">
+          <property name="readOnly"><bool>true</bool></property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="hLayoutBottoniEventi">
+          <item>
+           <widget class="QPushButton" name="buttonAggiungiEvento">
+            <property name="text"><string>+ Aggiungi</string></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="buttonModificaEvento">
+            <property name="text"><string>Modifica</string></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="buttonEliminaEvento">
+            <property name="text"><string>Elimina</string></property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+</ui>
